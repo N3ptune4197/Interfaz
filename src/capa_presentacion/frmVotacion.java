@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package interfaz;
+package capa_presentacion;
 
 /**
  *
@@ -51,7 +51,6 @@ public class frmVotacion extends javax.swing.JFrame {
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(0, 51, 102));
-        lblTitulo.setIcon(new javax.swing.ImageIcon("C:\\Users\\NAYR VASQUEZ\\Pictures\\Screenshots\\Captura de pantalla 2026-06-22 171242.png")); // NOI18N
         lblTitulo.setText("Elección de Fórmula Presidencial");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -73,8 +72,6 @@ public class frmVotacion extends javax.swing.JFrame {
 
         JPanelKeiko.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblFotoKeiko.setIcon(new javax.swing.ImageIcon("C:\\Users\\NAYR VASQUEZ\\Downloads\\10001088.png")); // NOI18N
-
         lblPorcentajeKeiko.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblPorcentajeKeiko.setForeground(new java.awt.Color(0, 51, 102));
         lblPorcentajeKeiko.setText("0.00%");
@@ -89,7 +86,6 @@ public class frmVotacion extends javax.swing.JFrame {
 
         lblFuerzaPopular.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblFuerzaPopular.setForeground(new java.awt.Color(153, 153, 153));
-        lblFuerzaPopular.setIcon(new javax.swing.ImageIcon("C:\\Users\\NAYR VASQUEZ\\Downloads\\00000008.png")); // NOI18N
         lblFuerzaPopular.setText("FUERZA POPULAR");
 
         lblApellidosKeiko1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -135,8 +131,6 @@ public class frmVotacion extends javax.swing.JFrame {
 
         JPanelKeiko1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblFotoSanchez.setIcon(new javax.swing.ImageIcon("C:\\Users\\NAYR VASQUEZ\\Downloads\\16002918.png")); // NOI18N
-
         lblPorcentajeSanchez.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblPorcentajeSanchez.setForeground(new java.awt.Color(0, 51, 102));
         lblPorcentajeSanchez.setText("0.00%");
@@ -151,7 +145,6 @@ public class frmVotacion extends javax.swing.JFrame {
 
         lblFuerzaPopular1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblFuerzaPopular1.setForeground(new java.awt.Color(153, 153, 153));
-        lblFuerzaPopular1.setIcon(new javax.swing.ImageIcon("C:\\Users\\NAYR VASQUEZ\\Downloads\\00000010.png")); // NOI18N
         lblFuerzaPopular1.setText("JUNTOS POR EL PERÚ");
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N

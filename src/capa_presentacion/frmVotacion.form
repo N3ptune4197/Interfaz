@@ -88,9 +88,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="33" red="0" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\NAYR VASQUEZ\Pictures\Screenshots\Captura de pantalla 2026-06-22 171242.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Elecci&#xf3;n de F&#xf3;rmula Presidencial"/>
           </Properties>
         </Component>
@@ -151,11 +148,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblFotoKeiko">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\NAYR VASQUEZ\Downloads\10001088.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPorcentajeKeiko">
           <Properties>
@@ -197,9 +189,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\NAYR VASQUEZ\Downloads\00000008.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="FUERZA POPULAR"/>
           </Properties>
@@ -272,11 +261,6 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JLabel" name="lblFotoSanchez">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\NAYR VASQUEZ\Downloads\16002918.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPorcentajeSanchez">
           <Properties>
@@ -318,9 +302,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\NAYR VASQUEZ\Downloads\00000010.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="JUNTOS POR EL PER&#xda;"/>
           </Properties>
