@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package interfaz;
+package capa_presentacion;
 
 import java.util.Arrays;
 import java.util.List;
@@ -216,7 +216,6 @@ public class frmVotacion extends javax.swing.JFrame {
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(0, 51, 102));
-        lblTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Captura de pantalla 2026-06-22 171242.png"))); // NOI18N
         lblTitulo.setText("Elección de Fórmula Presidencial");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -254,7 +253,7 @@ public class frmVotacion extends javax.swing.JFrame {
 
         lblFuerzaPopular.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblFuerzaPopular.setForeground(new java.awt.Color(153, 153, 153));
-        lblFuerzaPopular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoFuerzaPopular.jpeg"))); // NOI18N
+
         lblFuerzaPopular.setText("FUERZA POPULAR");
 
         lblApellidosKeiko1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -300,8 +299,6 @@ public class frmVotacion extends javax.swing.JFrame {
 
         JPanelKeiko1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblFotoSanchez.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/RobertoSanchez.jpeg"))); // NOI18N
-
         lblPorcentajeSanchez.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblPorcentajeSanchez.setForeground(new java.awt.Color(0, 51, 102));
         lblPorcentajeSanchez.setText("0.00%");
@@ -316,7 +313,7 @@ public class frmVotacion extends javax.swing.JFrame {
 
         lblFuerzaPopular1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblFuerzaPopular1.setForeground(new java.awt.Color(153, 153, 153));
-        lblFuerzaPopular1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoJP.jpeg"))); // NOI18N
+
         lblFuerzaPopular1.setText("JUNTOS POR EL PERÚ");
 
         lblVotosSanchez.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
