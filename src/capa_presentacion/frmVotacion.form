@@ -32,17 +32,13 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="cboAmbito" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="lblRegion" min="-2" pref="70" max="-2" attributes="0"/>
+                      <Component id="lblRegion" min="-2" pref="84" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="cboRegion" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="lblProvincia" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="cboProvincia" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="JPanelKeiko" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
               <Component id="JPanelKeiko1" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="399" max="32767" attributes="0"/>
           </Group>
@@ -54,12 +50,10 @@
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cboProvincia" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cboRegion" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="cboAmbito" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblAmbito" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblRegion" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblProvincia" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -392,19 +386,6 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cboProvincia">
-      <Properties>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="0"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboProvinciaActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
     <Component class="javax.swing.JLabel" name="lblAmbito">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xc1;MBITO:"/>
@@ -412,12 +393,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblRegion">
       <Properties>
-        <Property name="text" type="java.lang.String" value="------------"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblProvincia">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="------------"/>
+        <Property name="text" type="java.lang.String" value="----------------"/>
       </Properties>
     </Component>
   </SubComponents>
