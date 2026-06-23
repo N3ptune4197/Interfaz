@@ -444,11 +444,12 @@ public class frmVotacion extends javax.swing.JFrame {
         cboRegion.removeAllItems();
         cboProvincia.removeAllItems();
         
+        cboRegion.setEnabled(false);
+        cboProvincia.setEnabled(false);
+
         actualizarEtiquetas();
 
         if ("TODOS".equals(ambito)) {
-            cboRegion.setEnabled(false);
-            cboProvincia.setEnabled(false);
             actualizarResultados();
             return;
         }
@@ -490,8 +491,6 @@ public class frmVotacion extends javax.swing.JFrame {
             cboRegion.addItem("OCEANÍA");
 
         }
-        
-        cboProvincia.setEnabled(false);
 
         actualizarEtiquetas();
     }
@@ -502,6 +501,7 @@ public class frmVotacion extends javax.swing.JFrame {
         String region = (String) cboRegion.getSelectedItem();
 
         cboProvincia.removeAllItems();
+        cboProvincia.setEnabled(false);
 
         if (ambito == null || region == null) return;
 
@@ -526,7 +526,7 @@ public class frmVotacion extends javax.swing.JFrame {
         if ("PERÚ".equals(ambito)) {
             lblRegion.setText("Región:");
             lblProvincia.setText("Provincia:");
-        } else if ("Extranjero".equals(ambito)) {
+        } else if ("EXTRANJERO".equals(ambito)) {
             lblRegion.setText("Continente:");
             lblProvincia.setText("País:");
         } else {
@@ -534,7 +534,6 @@ public class frmVotacion extends javax.swing.JFrame {
             lblProvincia.setText("---");
         }
     }
-    
     
     /**
      * @param args the command line arguments
