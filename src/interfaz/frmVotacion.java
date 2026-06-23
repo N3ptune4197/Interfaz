@@ -34,7 +34,7 @@ public class frmVotacion extends javax.swing.JFrame {
         lblFotoKeiko = new javax.swing.JLabel();
         lblPorcentajeKeiko = new javax.swing.JLabel();
         lblNombresKeiko = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        lblVotosKeiko = new javax.swing.JLabel();
         lblFuerzaPopular = new javax.swing.JLabel();
         lblApellidosKeiko1 = new javax.swing.JLabel();
         JPanelKeiko1 = new javax.swing.JPanel();
@@ -43,7 +43,15 @@ public class frmVotacion extends javax.swing.JFrame {
         lblNombresSanchez = new javax.swing.JLabel();
         lblApellidosSanchez = new javax.swing.JLabel();
         lblFuerzaPopular1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblVotosSanchez = new javax.swing.JLabel();
+        cboAmbito = new javax.swing.JComboBox<>();
+        cboRegion = new javax.swing.JComboBox<>();
+        cboProvincia = new javax.swing.JComboBox<>();
+        cboDistrito = new javax.swing.JComboBox<>();
+        lblAmbito = new javax.swing.JLabel();
+        lblRegion = new javax.swing.JLabel();
+        lblDistrito = new javax.swing.JLabel();
+        lblProvincia = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,7 +59,7 @@ public class frmVotacion extends javax.swing.JFrame {
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(0, 51, 102));
-        lblTitulo.setIcon(new javax.swing.ImageIcon("C:\\Users\\NAYR VASQUEZ\\Pictures\\Screenshots\\Captura de pantalla 2026-06-22 171242.png")); // NOI18N
+        lblTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Captura de pantalla 2026-06-22 171242.png"))); // NOI18N
         lblTitulo.setText("Elección de Fórmula Presidencial");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -68,12 +76,12 @@ public class frmVotacion extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTitulo)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         JPanelKeiko.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblFotoKeiko.setIcon(new javax.swing.ImageIcon("C:\\Users\\NAYR VASQUEZ\\Downloads\\10001088.png")); // NOI18N
+        lblFotoKeiko.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/KeikoFujimori.jpeg"))); // NOI18N
 
         lblPorcentajeKeiko.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblPorcentajeKeiko.setForeground(new java.awt.Color(0, 51, 102));
@@ -83,13 +91,13 @@ public class frmVotacion extends javax.swing.JFrame {
         lblNombresKeiko.setForeground(new java.awt.Color(0, 51, 102));
         lblNombresKeiko.setText("KEIKO SOFIA");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 51, 102));
-        jLabel1.setText("0 votos");
+        lblVotosKeiko.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblVotosKeiko.setForeground(new java.awt.Color(0, 51, 102));
+        lblVotosKeiko.setText("0 votos");
 
         lblFuerzaPopular.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblFuerzaPopular.setForeground(new java.awt.Color(153, 153, 153));
-        lblFuerzaPopular.setIcon(new javax.swing.ImageIcon("C:\\Users\\NAYR VASQUEZ\\Downloads\\00000008.png")); // NOI18N
+        lblFuerzaPopular.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoFuerzaPopular.jpeg"))); // NOI18N
         lblFuerzaPopular.setText("FUERZA POPULAR");
 
         lblApellidosKeiko1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -107,10 +115,10 @@ public class frmVotacion extends javax.swing.JFrame {
                 .addGroup(JPanelKeikoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblNombresKeiko)
                     .addComponent(lblPorcentajeKeiko)
-                    .addComponent(jLabel1)
+                    .addComponent(lblVotosKeiko)
                     .addComponent(lblFuerzaPopular)
                     .addComponent(lblApellidosKeiko1))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JPanelKeikoLayout.setVerticalGroup(
             JPanelKeikoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,13 +137,13 @@ public class frmVotacion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblFuerzaPopular, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1)
+                .addComponent(lblVotosKeiko)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         JPanelKeiko1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblFotoSanchez.setIcon(new javax.swing.ImageIcon("C:\\Users\\NAYR VASQUEZ\\Downloads\\16002918.png")); // NOI18N
+        lblFotoSanchez.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/RobertoSanchez.jpeg"))); // NOI18N
 
         lblPorcentajeSanchez.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblPorcentajeSanchez.setForeground(new java.awt.Color(0, 51, 102));
@@ -151,12 +159,12 @@ public class frmVotacion extends javax.swing.JFrame {
 
         lblFuerzaPopular1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblFuerzaPopular1.setForeground(new java.awt.Color(153, 153, 153));
-        lblFuerzaPopular1.setIcon(new javax.swing.ImageIcon("C:\\Users\\NAYR VASQUEZ\\Downloads\\00000010.png")); // NOI18N
+        lblFuerzaPopular1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/logoJP.jpeg"))); // NOI18N
         lblFuerzaPopular1.setText("JUNTOS POR EL PERÚ");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 51, 102));
-        jLabel2.setText("0 votos");
+        lblVotosSanchez.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblVotosSanchez.setForeground(new java.awt.Color(0, 51, 102));
+        lblVotosSanchez.setText("0 votos");
 
         javax.swing.GroupLayout JPanelKeiko1Layout = new javax.swing.GroupLayout(JPanelKeiko1);
         JPanelKeiko1.setLayout(JPanelKeiko1Layout);
@@ -167,20 +175,17 @@ public class frmVotacion extends javax.swing.JFrame {
                 .addComponent(lblFotoSanchez)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(JPanelKeiko1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
+                    .addComponent(lblVotosSanchez)
                     .addComponent(lblPorcentajeSanchez)
                     .addComponent(lblNombresSanchez)
                     .addComponent(lblApellidosSanchez)
                     .addComponent(lblFuerzaPopular1))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         JPanelKeiko1Layout.setVerticalGroup(
             JPanelKeiko1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JPanelKeiko1Layout.createSequentialGroup()
-                .addGroup(JPanelKeiko1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(JPanelKeiko1Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(lblFotoSanchez))
+                .addGroup(JPanelKeiko1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(JPanelKeiko1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(lblPorcentajeSanchez)
@@ -188,12 +193,32 @@ public class frmVotacion extends javax.swing.JFrame {
                         .addComponent(lblNombresSanchez)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblApellidosSanchez)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblFuerzaPopular1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(10, 10, 10)
+                        .addComponent(lblFuerzaPopular1, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(JPanelKeiko1Layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(lblFotoSanchez)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addComponent(lblVotosSanchez)
                 .addContainerGap(7, Short.MAX_VALUE))
         );
+
+        cboAmbito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "PERÚ", "EXTRANJERO" }));
+        cboAmbito.addActionListener(this::cboAmbitoActionPerformed);
+
+        cboRegion.addActionListener(this::cboRegionActionPerformed);
+
+        cboProvincia.addActionListener(this::cboProvinciaActionPerformed);
+
+        cboDistrito.addActionListener(this::cboDistritoActionPerformed);
+
+        lblAmbito.setText("ÁMBITO:");
+
+        lblRegion.setText("------------");
+
+        lblDistrito.setText("------------");
+
+        lblProvincia.setText("------------");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -202,25 +227,246 @@ public class frmVotacion extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(JPanelKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lblAmbito)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboAmbito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblProvincia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JPanelKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(lblDistrito)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboDistrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(399, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboDistrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboAmbito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblAmbito)
+                    .addComponent(lblRegion)
+                    .addComponent(lblDistrito)
+                    .addComponent(lblProvincia))
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JPanelKeiko1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JPanelKeiko, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(126, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void cboAmbitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboAmbitoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_cboAmbitoActionPerformed
+
+    private void cboRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboRegionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboRegionActionPerformed
+
+    private void cboProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboProvinciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboProvinciaActionPerformed
+
+    private void cboDistritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboDistritoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboDistritoActionPerformed
+    
+    private void actualizarResultados() {
+
+    }
+    
+    private void actualizarSelectores() {
+        String ambito = (String) cboAmbito.getSelectedItem();
+
+        cboRegion.removeAllItems();
+        cboProvincia.removeAllItems();
+        cboDistrito.removeAllItems();
+        
+        actualizarEtiquetas();
+
+        if ("TODOS".equals(ambito)) {
+            cboRegion.setEnabled(false);
+            cboProvincia.setEnabled(false);
+            cboDistrito.setEnabled(false);
+            actualizarResultados();
+            return;
+        }
+
+        cboRegion.setEnabled(true);
+
+        if ("PERÚ".equals(ambito)) {
+            cboRegion.addItem("AMAZONAS");
+            cboRegion.addItem("ÁNCASH");
+            cboRegion.addItem("APURÍMAC");
+            cboRegion.addItem("AREQUIPA");
+            cboRegion.addItem("AYACUCHO");
+            cboRegion.addItem("CAJAMARCA");
+            cboRegion.addItem("CALLAO");
+            cboRegion.addItem("CUSCO");
+            cboRegion.addItem("HUANCAVELICA");
+            cboRegion.addItem("HUÁNUCO");
+            cboRegion.addItem("ICA");
+            cboRegion.addItem("JUNÍN");
+            cboRegion.addItem("LA LIBERTAD");
+            cboRegion.addItem("LAMBAYEQUE");
+            cboRegion.addItem("LIMA");
+            cboRegion.addItem("LORETO");
+            cboRegion.addItem("MADRE DE DIOS");
+            cboRegion.addItem("MOQUEGUA");
+            cboRegion.addItem("PASCO");
+            cboRegion.addItem("PIURA");
+            cboRegion.addItem("PUNO");
+            cboRegion.addItem("SAN MARTÍN");
+            cboRegion.addItem("TACNA");
+            cboRegion.addItem("TUMBES");
+            cboRegion.addItem("UCAYALI");
+            
+        } else if ("EXTRANJERO".equals(ambito)) {
+            cboRegion.addItem("ÁFRICA");
+            cboRegion.addItem("AMÉRICA");
+            cboRegion.addItem("ASIA");
+            cboRegion.addItem("EUROPA");
+            cboRegion.addItem("OCEANÍA");
+
+        }
+        
+        cboProvincia.setEnabled(false);
+        cboDistrito.setEnabled(false);
+
+        actualizarEtiquetas();
+    }
+    
+    private void cargarNivel2() {
+        String ambito = (String) cbAmbito.getSelectedItem();
+        String nivel1 = (String) cbNivel1.getSelectedItem();
+        
+        cbNivel2.removeAllItems();
+        cbNivel3.removeAllItems();
+        cbNivel3.setEnabled(false);
+        
+        if (nivel1 == null || nivel1.isEmpty()) {
+            cbNivel2.setEnabled(false);
+            actualizarResultados();
+            return;
+        }
+        
+        cbNivel2.setEnabled(true);
+        
+        if ("PERÚ".equals(ambito)) {
+            // Cargar provincias según región
+            if ("Amazonas".equals(nivel1)) {
+                cbNivel2.addItem("Bagua");
+                cbNivel2.addItem("Utcubamba");
+                cbNivel2.addItem("Chachapoyas");
+            } else if ("Áncash".equals(nivel1)) {
+                cbNivel2.addItem("Huaraz");
+                cbNivel2.addItem("Santa");
+                cbNivel2.addItem("Casma");
+            } else if ("Lima".equals(nivel1)) {
+                cbNivel2.addItem("Lima");
+                cbNivel2.addItem("Cañete");
+                cbNivel2.addItem("Huarochirí");
+            }
+        } else if ("EXTRANJERO".equals(ambito)) {
+            // Cargar países según continente
+            if ("América".equals(nivel1)) {
+                cbNivel2.addItem("EEUU");
+                cbNivel2.addItem("Canadá");
+                cbNivel2.addItem("México");
+            } else if ("Europa".equals(nivel1)) {
+                cbNivel2.addItem("España");
+                cbNivel2.addItem("Francia");
+                cbNivel2.addItem("Italia");
+            }
+        }
+        
+        actualizarResultados();
+    }
+    
+    private void cargarNivel3() {
+        String ambito = (String) cbAmbito.getSelectedItem();
+        String nivel1 = (String) cbNivel1.getSelectedItem();
+        String nivel2 = (String) cbNivel2.getSelectedItem();
+        
+        cbNivel3.removeAllItems();
+        
+        if (nivel2 == null || nivel2.isEmpty()) {
+            cbNivel3.setEnabled(false);
+            actualizarResultados();
+            return;
+        }
+        
+        cbNivel3.setEnabled(true);
+        
+        if ("PERÚ".equals(ambito)) {
+            // Cargar distritos según provincia
+            if ("Bagua".equals(nivel2)) {
+                cbNivel3.addItem("Bagua");
+                cbNivel3.addItem("El Parco");
+                cbNivel3.addItem("Copallín");
+            } else if ("Utcubamba".equals(nivel2)) {
+                cbNivel3.addItem("Bagua Grande");
+                cbNivel3.addItem("Cajaruro");
+            } else if ("Huaraz".equals(nivel2)) {
+                cbNivel3.addItem("Huaraz");
+                cbNivel3.addItem("Independencia");
+            }
+        } else if ("EXTRANJERO".equals(ambito)) {
+            // Cargar ciudades según país
+            if ("EEUU".equals(nivel2)) {
+                cbNivel3.addItem("Nueva York");
+                cbNivel3.addItem("Miami");
+                cbNivel3.addItem("Los Ángeles");
+            } else if ("España".equals(nivel2)) {
+                cbNivel3.addItem("Madrid");
+                cbNivel3.addItem("Barcelona");
+            }
+        }
+        
+        actualizarResultados();
+    }
+
+    private void actualizarEtiquetas() {
+        String ambito = (String) cboAmbito.getSelectedItem();
+
+        if ("PERÚ".equals(ambito)) {
+            lblRegion.setText("Región:");
+            lblProvincia.setText("Provincia:");
+            lblDistrito.setText("Distrito:");
+        } else if ("Extranjero".equals(ambito)) {
+            lblRegion.setText("Continente:");
+            lblProvincia.setText("País:");
+            lblDistrito.setText("Ciudad:");
+        } else {
+            lblRegion.setText("---");
+            lblProvincia.setText("---");
+            lblDistrito.setText("---");
+        }
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -249,11 +495,15 @@ public class frmVotacion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPanelKeiko;
     private javax.swing.JPanel JPanelKeiko1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JComboBox<String> cboAmbito;
+    private javax.swing.JComboBox<String> cboDistrito;
+    private javax.swing.JComboBox<String> cboProvincia;
+    private javax.swing.JComboBox<String> cboRegion;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblAmbito;
     private javax.swing.JLabel lblApellidosKeiko1;
     private javax.swing.JLabel lblApellidosSanchez;
+    private javax.swing.JLabel lblDistrito;
     private javax.swing.JLabel lblFotoKeiko;
     private javax.swing.JLabel lblFotoSanchez;
     private javax.swing.JLabel lblFuerzaPopular;
@@ -262,6 +512,10 @@ public class frmVotacion extends javax.swing.JFrame {
     private javax.swing.JLabel lblNombresSanchez;
     private javax.swing.JLabel lblPorcentajeKeiko;
     private javax.swing.JLabel lblPorcentajeSanchez;
+    private javax.swing.JLabel lblProvincia;
+    private javax.swing.JLabel lblRegion;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblVotosKeiko;
+    private javax.swing.JLabel lblVotosSanchez;
     // End of variables declaration//GEN-END:variables
 }

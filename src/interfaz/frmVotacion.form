@@ -26,10 +26,35 @@
           <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-              <Component id="JPanelKeiko" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="JPanelKeiko1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="70" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="lblAmbito" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cboAmbito" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="lblRegion" min="-2" pref="70" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cboRegion" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="lblProvincia" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cboProvincia" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="JPanelKeiko" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Component id="JPanelKeiko1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="lblDistrito" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cboDistrito" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="399" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -37,12 +62,23 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="cboProvincia" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cboDistrito" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cboRegion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cboAmbito" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblAmbito" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblRegion" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblDistrito" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblProvincia" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="JPanelKeiko1" max="32767" attributes="0"/>
                   <Component id="JPanelKeiko" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace pref="126" max="32767" attributes="0"/>
+              <EmptySpace pref="147" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -74,7 +110,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="22" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -89,7 +125,7 @@
               <Color blue="66" green="33" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\NAYR VASQUEZ\Pictures\Screenshots\Captura de pantalla 2026-06-22 171242.png"/>
+              <Image iconType="3" name="/Recursos/Captura de pantalla 2026-06-22 171242.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Elecci&#xf3;n de F&#xf3;rmula Presidencial"/>
           </Properties>
@@ -115,11 +151,11 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="lblNombresKeiko" min="-2" max="-2" attributes="0"/>
                       <Component id="lblPorcentajeKeiko" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblVotosKeiko" min="-2" max="-2" attributes="0"/>
                       <Component id="lblFuerzaPopular" min="-2" max="-2" attributes="0"/>
                       <Component id="lblApellidosKeiko1" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -143,7 +179,7 @@
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblVotosKeiko" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -153,7 +189,7 @@
         <Component class="javax.swing.JLabel" name="lblFotoKeiko">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\NAYR VASQUEZ\Downloads\10001088.png"/>
+              <Image iconType="3" name="/Recursos/KeikoFujimori.jpeg"/>
             </Property>
           </Properties>
         </Component>
@@ -179,7 +215,7 @@
             <Property name="text" type="java.lang.String" value="KEIKO SOFIA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lblVotosKeiko">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -199,7 +235,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\NAYR VASQUEZ\Downloads\00000008.png"/>
+              <Image iconType="3" name="/Recursos/logoFuerzaPopular.jpeg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="FUERZA POPULAR"/>
           </Properties>
@@ -234,24 +270,20 @@
                   <Component id="lblFotoSanchez" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblVotosSanchez" min="-2" max="-2" attributes="0"/>
                       <Component id="lblPorcentajeSanchez" min="-2" max="-2" attributes="0"/>
                       <Component id="lblNombresSanchez" min="-2" max="-2" attributes="0"/>
                       <Component id="lblApellidosSanchez" min="-2" max="-2" attributes="0"/>
                       <Component id="lblFuerzaPopular1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                          <Component id="lblFotoSanchez" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Component id="lblPorcentajeSanchez" min="-2" max="-2" attributes="0"/>
@@ -259,12 +291,16 @@
                           <Component id="lblNombresSanchez" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lblApellidosSanchez" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="lblFuerzaPopular1" min="-2" pref="85" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                          <Component id="lblFotoSanchez" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblVotosSanchez" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="7" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -274,7 +310,7 @@
         <Component class="javax.swing.JLabel" name="lblFotoSanchez">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\NAYR VASQUEZ\Downloads\16002918.png"/>
+              <Image iconType="3" name="/Recursos/RobertoSanchez.jpeg"/>
             </Property>
           </Properties>
         </Component>
@@ -320,12 +356,12 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\NAYR VASQUEZ\Downloads\00000010.png"/>
+              <Image iconType="3" name="/Recursos/logoJP.jpeg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="JUNTOS POR EL PER&#xda;"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="lblVotosSanchez">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
@@ -338,5 +374,81 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JComboBox" name="cboAmbito">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="3">
+            <StringItem index="0" value="TODOS"/>
+            <StringItem index="1" value="PER&#xda;"/>
+            <StringItem index="2" value="EXTRANJERO"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboAmbitoActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cboRegion">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboRegionActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cboProvincia">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboProvinciaActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="cboDistrito">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboDistritoActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAmbito">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#xc1;MBITO:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblRegion">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="------------"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDistrito">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="------------"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblProvincia">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="------------"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>
