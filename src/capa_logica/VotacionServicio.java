@@ -23,9 +23,8 @@ public class VotacionServicio {
         this.repositorio = new VotoDAO();
     }
 
-    public void registrarVotos(String tipo, String region, String provincia,
-                               int votosKeiko, int votosSanchez) {
-        Voto voto = new Voto(tipo, region, provincia, votosKeiko, votosSanchez);
+    public void registrarVotos(String tipo, String ubicacion, int votosKeiko, int votosSanchez) {
+        Voto voto = new Voto(tipo, ubicacion, votosKeiko, votosSanchez);
         repositorio.guardarVoto(voto);
     }
 
@@ -37,16 +36,8 @@ public class VotacionServicio {
         return repositorio.obtenerPorTipo(tipo);
     }
 
-    public List<Voto> obtenerPorTipoYRegion(String tipo, String region) {
-        return repositorio.obtenerPorTipoYRegion(tipo, region);
-    }
-
-    public List<Voto> obtenerPorFiltros(String tipo, String region, String provincia) {
-        return repositorio.obtenerPorFiltros(tipo, region, provincia);
-    }
-
-    public Voto obtenerPorClave(String tipo, String region, String provincia) {
-        return repositorio.obtenerPorClave(tipo, region, provincia);
+    public Voto obtenerPorUbicacion(String ubicacion) {
+        return repositorio.obtenerPorUbicacion(ubicacion);
     }
 
     public ResultadosTotales obtenerTotales() {
@@ -59,8 +50,8 @@ public class VotacionServicio {
         return new ResultadosTotales(totalKeiko, totalSanchez);
     }
 
-    public ResultadosTotales obtenerTotalesFiltrados(String tipo, String region, String provincia) {
-        List<Voto> lista = repositorio.obtenerPorFiltros(tipo, region, provincia);
+    public ResultadosTotales obtenerTotalesPorTipo(String tipo) {
+        List<Voto> lista = repositorio.obtenerPorTipo(tipo);
         int totalKeiko = 0, totalSanchez = 0;
         for (Voto v : lista) {
             totalKeiko += v.getVotosKeiko();

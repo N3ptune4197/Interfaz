@@ -37,32 +37,13 @@ public class VotoDAO {
         return resultado;
     }
 
-    public List<Voto> obtenerPorTipoYRegion(String tipo, String region) {
-        List<Voto> resultado = new ArrayList<>();
+    public Voto obtenerPorUbicacion(String ubicacion) {
         for (Voto v : votosMap.values()) {
-            if (v.getTipo().equals(tipo) && v.getRegion().equals(region)) {
-                resultado.add(v);
+            if (v.getUbicacion().equalsIgnoreCase(ubicacion)) {
+                return v;
             }
         }
-        return resultado;
-    }
-
-    // Filtro completo: tipo, región, provincia (cualquiera puede ser null para no filtrar)
-    public List<Voto> obtenerPorFiltros(String tipo, String region, String provincia) {
-        List<Voto> resultado = new ArrayList<>();
-        for (Voto v : votosMap.values()) {
-            boolean coincide = true;
-            if (tipo != null && !tipo.isEmpty() && !tipo.equals(v.getTipo())) coincide = false;
-            if (region != null && !region.isEmpty() && !region.equals(v.getRegion())) coincide = false;
-            if (provincia != null && !provincia.isEmpty() && !provincia.equals(v.getProvincia())) coincide = false;
-            if (coincide) resultado.add(v);
-        }
-        return resultado;
-    }
-
-    public Voto obtenerPorClave(String tipo, String region, String provincia) {
-        String clave = tipo + "|" + region + "|" + provincia;
-        return votosMap.get(clave);
+        return null;
     }
 
     public void limpiar() {
