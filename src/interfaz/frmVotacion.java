@@ -31,19 +31,116 @@ public class frmVotacion extends javax.swing.JFrame {
         Map<String, List<String>> peru = new HashMap<>();
 
         peru.put("AMAZONAS", Arrays.asList(
-            "Chachapoyas", "Bagua", "Bongará", "Condorcanqui", "Luya", "Utcubamba"
+            "Bagua", "Bongará", "Chachapoyas",  "Condorcanqui", "Luya", "Rodríguez de Mendoza", "Utcubamba"
         ));
 
         peru.put("ÁNCASH", Arrays.asList(
-            "Huaraz", "Santa", "Casma", "Huari", "Huarmey"
+            "Aija", "Antonio Raymondi", "Asunción", "Bolognesi", "Carhuaz", "Casma", "Corongo", "Huaraz", 
+            "Huari", "Huarmey", "Huaylas", "Mariscal Luzuriaga", "Ocros", "Pallasca", "Pomabamba",
+            "Recuay", "Santa", "Sihuas", "Yungay"
         ));
 
-        peru.put("LIMA", Arrays.asList(
-            "Lima", "Cañete", "Huarochirí", "Huaura"
+        peru.put("APURÍMAC", Arrays.asList(
+            "Abancay", "Andahuaylas", "Antabamba", "Aymaraes", "Cotabambas", "Chincheros", "Grau"
+        ));
+
+        peru.put("AREQUIPA", Arrays.asList(
+            "Arequipa", "Camaná", "Caravelí", "Castilla", "Caylloma", "Condesuyos", "Islay", "La Unión"
+        ));
+
+        peru.put("AYACUCHO", Arrays.asList(
+            "Cangallo", "Huamanga", "Huanca Sancos", "Huanta", "La Mar", "Lucanas", "Parinacochas",
+            "Páucar del Sara Sara", "Sucre", "Víctor Fajardo", "Vilcas Huamán"
+        ));
+
+        peru.put("CAJAMARCA", Arrays.asList(
+            "Cajabamba", "Cajamarca", "Celendín", "Chota", "Contumazá", "Cutervo", "Hualgayoc",
+            "Jaén", "San Ignacio", "San Marcos", "San Miguel", "San Pablo", "Santa Cruz"
+        ));
+
+        peru.put("CALLAO", Arrays.asList(
+            "Callao"
+        ));
+
+        peru.put("CUSCO", Arrays.asList(
+            "Acomayo", "Anta", "Calca", "Canas", "Canchis", "Chumbivilcas", "Cusco",
+            "Espinar", "La Convención", "Paruro", "Paucartambo", "Quispicanchi", "Urubamba"
+        ));
+
+        peru.put("HUANCAVELICA", Arrays.asList(
+            "Acobamba", "Angaraes", "Castrovirreyna", "Churcampa", "Huancavelica", 
+            "Huaytará", "Tayacaja"
+        ));
+
+        peru.put("HUÁNUCO", Arrays.asList(
+            "Ambo", "Dos de Mayo", "Huacaybamba", "Huamalíes", "Huánuco", 
+            "Leoncio Prado", "Marañón", "Pachitea", "Puerto Inca", "Lauricocha", "Yarowilca"
+        ));
+
+        peru.put("ICA", Arrays.asList(
+            "Chincha", "Ica", "Nazca", "Palpa", "Pisco"
+        ));
+
+        peru.put("JUNÍN", Arrays.asList(
+            "Chanchamayo", "Chupaca", "Concepción", "Huancayo", "Jauja",
+            "Junín", "Satipo", "Tarma", "Yauli"
+        ));
+
+        peru.put("LA LIBERTAD", Arrays.asList(
+            "Ascope", "Bolívar", "Chepén", "Gran Chimú", "Julcán", "Otuzco", "Pacasmayo", 
+            "Pataz", "Sánchez Carrión", "Santiago de Chuco", "Trujillo", "Virú"
         ));
 
         peru.put("LAMBAYEQUE", Arrays.asList(
             "Chiclayo", "Ferreñafe", "Lambayeque"
+        ));
+
+        peru.put("LIMA", Arrays.asList(
+            "Barranca", "Cajatambo", "Canta", "Cañete", "Huaral", 
+            "Huarochirí", "Huaura", "Lima", "Oyón", "Yauyos"
+        ));
+
+        peru.put("LORETO", Arrays.asList(
+            "Alto Amazonas", "Loreto", "Mariscal Ramón Castilla", "Maynas", 
+            "Requena", "Ucayali", "Datem del Marañón", "Putumayo"
+        ));
+
+        peru.put("MADRE DE DIOS", Arrays.asList(
+            "Manu", "Tahuamanu", "Tambopata"
+        ));
+
+        peru.put("MOQUEGUA", Arrays.asList(
+            "General Sánchez Cerro", "Ilo", "Mariscal Nieto"
+        ));
+
+        peru.put("PASCO", Arrays.asList(
+            "Daniel Alcides Carrión", "Oxapampa", "Pasco"
+        ));
+
+        peru.put("PIURA", Arrays.asList(
+            "Ayabaca", "Huancabamba", "Morropón", "Paita", "Piura", "Sullana", "Talara", "Sechura"
+        ));
+
+        peru.put("PUNO", Arrays.asList(
+            "Azángaro", "Carabaya", "Chucuito", "El Collao", "Huancané", "Lampa", "Melgar", 
+            "Moho", "Puno", "San Antonio de Putina", "San Román", "Sandia", "Yunguyo"
+        ));
+
+        peru.put("SAN MARTÍN", Arrays.asList(
+            "Bellavista", "El Dorado", "Huallaga", "Lamas", "Mariscal Cáceres", 
+            "Moyobamba", "Picota", "Rioja", "San Martín", "Tocache"
+        ));
+
+        peru.put("TACNA", Arrays.asList(
+            "Candarave", "Jorge Basadre", "Tacna", "Tarata"
+        ));
+
+        peru.put("TUMBES", Arrays.asList(
+            "Contralmirante Villar", "Tumbes", "Zarumilla"
+        ));
+
+        peru.put("UCAYALI", Arrays.asList(
+            "Atalaya", "Coronel Portillo", "Padre Abad", "Purús"
         ));
 
         data.put("PERÚ", peru);
@@ -51,12 +148,32 @@ public class frmVotacion extends javax.swing.JFrame {
 
         Map<String, List<String>> extranjero = new HashMap<>();
 
+        extranjero.put("ÁFRICA", Arrays.asList(
+            "Argelia", "Ghana", "Kenia", "Egipto", "Marruecos", "República Árabe de Egipto", "Sudáfrica"
+        ));
+        
         extranjero.put("AMÉRICA", Arrays.asList(
-            "EEUU", "Canadá", "México"
+            "Antillas Holandesas", "Argentina", "Bolivia", "Brasil", "Canadá", "Chile",
+            "Colombia", "Costa Rica", "Cuba", "Ecuador", "El Salvador", "Estados Unidos de América", 
+            "Guatemala", "Guayana Francesa", "Honduras", "México", "Nicaragua", "Panamá", "Paraguay", 
+            "Puerto Rico", "República Dominicana", "Trinidad y Tobago", "Uruguay", "Venezuela"
+        ));
+        
+        extranjero.put("ASIA", Arrays.asList(
+            "Arabia Saudita", "Catar", "Emiratos Árabes Unidos", "Filipinas", "India", "Indonesia", 
+            "Irán", "Israel", "Japón", "Jordania", "Kuwait", "Líbano", "Malasia", "República de Corea",
+            "República Popular China", "Singapur", "Tailandia", "Turquía", "Vietnam"
         ));
 
         extranjero.put("EUROPA", Arrays.asList(
-            "España", "Francia", "Italia"
+            "Alemania", "Austria", "Bélgica", "Bielorrusia", "Dinamarca", "España", "Finlandia", "Francia", 
+            "Gran Bretaña", "Gran Ducado de Luxemburgo", "Grecia", "Holanda", "Hungría", "Irlanda", "Italia", 
+            "Macedonia", "Malta", "Noruega", "Polonia", "Portugal", "Principado de Andorra", "República Checa",
+            "Rumania", "Rusia", "Suecia", "Suiza"
+        ));
+        
+        extranjero.put("OCEANÍA", Arrays.asList(
+            "Australia", "Nueva Zelanda"
         ));
 
         data.put("EXTRANJERO", extranjero);
@@ -89,10 +206,8 @@ public class frmVotacion extends javax.swing.JFrame {
         cboAmbito = new javax.swing.JComboBox<>();
         cboRegion = new javax.swing.JComboBox<>();
         cboProvincia = new javax.swing.JComboBox<>();
-        cboDistrito = new javax.swing.JComboBox<>();
         lblAmbito = new javax.swing.JLabel();
         lblRegion = new javax.swing.JLabel();
-        lblDistrito = new javax.swing.JLabel();
         lblProvincia = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -252,13 +367,9 @@ public class frmVotacion extends javax.swing.JFrame {
 
         cboProvincia.addActionListener(this::cboProvinciaActionPerformed);
 
-        cboDistrito.addActionListener(this::cboDistritoActionPerformed);
-
         lblAmbito.setText("ÁMBITO:");
 
         lblRegion.setText("------------");
-
-        lblDistrito.setText("------------");
 
         lblProvincia.setText("------------");
 
@@ -283,15 +394,8 @@ public class frmVotacion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cboProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(JPanelKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(lblDistrito)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cboDistrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(8, 8, 8)
+                .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(399, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -301,12 +405,10 @@ public class frmVotacion extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cboProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cboDistrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cboAmbito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblAmbito)
                     .addComponent(lblRegion)
-                    .addComponent(lblDistrito)
                     .addComponent(lblProvincia))
                 .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -320,38 +422,33 @@ public class frmVotacion extends javax.swing.JFrame {
 
     private void cboAmbitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboAmbitoActionPerformed
         // TODO add your handling code here:
-        
+        cargarNivel1();
     }//GEN-LAST:event_cboAmbitoActionPerformed
 
     private void cboRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboRegionActionPerformed
         // TODO add your handling code here:
+        cargarNivel2();
     }//GEN-LAST:event_cboRegionActionPerformed
 
     private void cboProvinciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboProvinciaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboProvinciaActionPerformed
-
-    private void cboDistritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboDistritoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cboDistritoActionPerformed
     
     private void actualizarResultados() {
 
     }
     
-    private void actualizarSelectores() {
+    private void cargarNivel1() {
         String ambito = (String) cboAmbito.getSelectedItem();
 
         cboRegion.removeAllItems();
         cboProvincia.removeAllItems();
-        cboDistrito.removeAllItems();
         
         actualizarEtiquetas();
 
         if ("TODOS".equals(ambito)) {
             cboRegion.setEnabled(false);
             cboProvincia.setEnabled(false);
-            cboDistrito.setEnabled(false);
             actualizarResultados();
             return;
         }
@@ -395,7 +492,6 @@ public class frmVotacion extends javax.swing.JFrame {
         }
         
         cboProvincia.setEnabled(false);
-        cboDistrito.setEnabled(false);
 
         actualizarEtiquetas();
     }
@@ -406,7 +502,6 @@ public class frmVotacion extends javax.swing.JFrame {
         String region = (String) cboRegion.getSelectedItem();
 
         cboProvincia.removeAllItems();
-        cboDistrito.removeAllItems();
 
         if (ambito == null || region == null) return;
 
@@ -423,41 +518,6 @@ public class frmVotacion extends javax.swing.JFrame {
         }
 
         cboProvincia.setEnabled(true);
-        cboDistrito.setEnabled(false);
-    }
-    
-    private void cargarNivel3() {
-
-        String provincia = (String) cboProvincia.getSelectedItem();
-
-        cboDistrito.removeAllItems();
-
-        if (provincia == null) return;
-
-        cboDistrito.setEnabled(true);
-
-        if ("Bagua".equals(provincia)) {
-            cboDistrito.addItem("Bagua");
-            cboDistrito.addItem("Aramango");
-            cboDistrito.addItem("Copallín");
-            cboDistrito.addItem("El Parco");
-
-        } else if ("Utcubamba".equals(provincia)) {
-            cboDistrito.addItem("Bagua Grande");
-            cboDistrito.addItem("Cajaruro");
-            cboDistrito.addItem("Cumba");
-
-        } else if ("Huaraz".equals(provincia)) {
-            cboDistrito.addItem("Huaraz");
-            cboDistrito.addItem("Independencia");
-            cboDistrito.addItem("Olleros");
-
-        } else if ("Lima".equals(provincia)) {
-            cboDistrito.addItem("Lima");
-            cboDistrito.addItem("Ate");
-            cboDistrito.addItem("Comas");
-            cboDistrito.addItem("San Juan de Lurigancho");
-        }
     }
 
     private void actualizarEtiquetas() {
@@ -466,15 +526,12 @@ public class frmVotacion extends javax.swing.JFrame {
         if ("PERÚ".equals(ambito)) {
             lblRegion.setText("Región:");
             lblProvincia.setText("Provincia:");
-            lblDistrito.setText("Distrito:");
         } else if ("Extranjero".equals(ambito)) {
             lblRegion.setText("Continente:");
             lblProvincia.setText("País:");
-            lblDistrito.setText("Ciudad:");
         } else {
             lblRegion.setText("---");
             lblProvincia.setText("---");
-            lblDistrito.setText("---");
         }
     }
     
@@ -508,14 +565,12 @@ public class frmVotacion extends javax.swing.JFrame {
     private javax.swing.JPanel JPanelKeiko;
     private javax.swing.JPanel JPanelKeiko1;
     private javax.swing.JComboBox<String> cboAmbito;
-    private javax.swing.JComboBox<String> cboDistrito;
     private javax.swing.JComboBox<String> cboProvincia;
     private javax.swing.JComboBox<String> cboRegion;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAmbito;
     private javax.swing.JLabel lblApellidosKeiko1;
     private javax.swing.JLabel lblApellidosSanchez;
-    private javax.swing.JLabel lblDistrito;
     private javax.swing.JLabel lblFotoKeiko;
     private javax.swing.JLabel lblFotoSanchez;
     private javax.swing.JLabel lblFuerzaPopular;
