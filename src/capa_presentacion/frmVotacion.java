@@ -14,15 +14,19 @@ import java.util.Map;
  * @author NAYR VASQUEZ
  */
 public class frmVotacion extends javax.swing.JFrame {
-    private Map<String, List<String>> data = new HashMap<>();
+  
+    private capa_logica.VotacionServicio service;
     
+    private Map<String, List<String>> data = new HashMap<>();
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmVotacion.class.getName());
 
     /**
      * Creates new form frmVotacion
      */
-    public frmVotacion() {
+    public frmVotacion(java.awt.Frame parent, boolean modal) {
         initComponents();
+        service = new capa_logica.VotacionServicio();
         initData();
         actualizarSelectores();
     }
@@ -72,6 +76,11 @@ public class frmVotacion extends javax.swing.JFrame {
         cboRegion = new javax.swing.JComboBox<>();
         lblAmbito = new javax.swing.JLabel();
         lblRegion = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        txtVotosKeiko = new javax.swing.JTextField();
+        txtVotosSanchez = new javax.swing.JTextField();
+        btnRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -224,13 +233,33 @@ public class frmVotacion extends javax.swing.JFrame {
         );
 
         cboAmbito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "PERÚ", "EXTRANJERO" }));
+        cboAmbito.addItemListener(this::cboAmbitoItemStateChanged);
         cboAmbito.addActionListener(this::cboAmbitoActionPerformed);
 
+        cboRegion.addItemListener(this::cboRegionItemStateChanged);
         cboRegion.addActionListener(this::cboRegionActionPerformed);
 
         lblAmbito.setText("ÁMBITO:");
 
         lblRegion.setText("----------------");
+
+        jLabel1.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel1.setText("Votos Keiko");
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 102));
+        jLabel2.setText("Votos Sánchez");
+
+        txtVotosKeiko.addActionListener(this::txtVotosKeikoActionPerformed);
+
+        txtVotosSanchez.addActionListener(this::txtVotosSanchezActionPerformed);
+
+        btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnRegistrar.setForeground(new java.awt.Color(0, 51, 102));
+        btnRegistrar.setText("Registrar Votos");
+        btnRegistrar.addActionListener(this::btnRegistrarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -238,20 +267,39 @@ public class frmVotacion extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblAmbito)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cboAmbito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cboRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(JPanelKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(399, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblAmbito)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cboAmbito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(lblRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cboRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(JPanelKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(55, 55, 55)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(87, 87, 87)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(378, 378, 378)
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,7 +315,15 @@ public class frmVotacion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JPanelKeiko1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JPanelKeiko, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -281,11 +337,76 @@ public class frmVotacion extends javax.swing.JFrame {
     private void cboRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboRegionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cboRegionActionPerformed
-    
-    private void actualizarResultados() {
 
-    }
-    
+    private void txtVotosKeikoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVotosKeikoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVotosKeikoActionPerformed
+
+    private void txtVotosSanchezActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtVotosSanchezActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtVotosSanchezActionPerformed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        // TODO add your handling code here:
+        // --- Leer valores de los combos ---
+        String ambito = cboAmbito.getSelectedItem().toString();   // "PERÚ" o "EXTRANJERO"
+        String region = cboRegion.getSelectedItem().toString();
+
+        // --- Validar que no sea "--" ---
+        if (ambito.equals("TODOS") || region.equals("--") || region.isEmpty()) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Seleccione un ámbito y una región válidos.",
+                    "Selección inválida", javax.swing.JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+        // --- Determinar tipo según ámbito ---
+        String tipo = ambito.equals("PERÚ") ? "Departamento" : "Extranjero";
+   
+        // --- Validar campos de votos ---
+        int votosKeiko, votosSanchez;
+        try {
+            votosKeiko = Integer.parseInt(txtVotosKeiko.getText().trim());
+            votosSanchez = Integer.parseInt(txtVotosSanchez.getText().trim());
+
+            if (votosKeiko < 0 || votosSanchez < 0) {
+                javax.swing.JOptionPane.showMessageDialog(this,
+                        "Los votos no pueden ser negativos.",
+                        "Valor inválido", javax.swing.JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        } catch (NumberFormatException e) {
+            javax.swing.JOptionPane.showMessageDialog(this,
+                    "Ingrese números enteros válidos en los campos de votos.",
+                    "Formato inválido", javax.swing.JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+   
+        // --- Registrar y actualizar ---
+        service.registrarVotos(tipo, region, votosKeiko, votosSanchez);
+        actualizarResultados();
+        txtVotosKeiko.setText("");
+        txtVotosSanchez.setText("");
+
+        javax.swing.JOptionPane.showMessageDialog(this,
+                "Votos registrados correctamente.", "Éxito",
+                javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void cboAmbitoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboAmbitoItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
+            actualizarResultados();
+        }
+    }//GEN-LAST:event_cboAmbitoItemStateChanged
+
+    private void cboRegionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboRegionItemStateChanged
+        // TODO add your handling code here:
+        if (evt.getStateChange() == java.awt.event.ItemEvent.SELECTED) {
+            actualizarResultados();
+        }
+    }//GEN-LAST:event_cboRegionItemStateChanged
+
     private void actualizarSelectores() {
         cboRegion.removeAllItems();
         String ambito = cboAmbito.getSelectedItem().toString();
@@ -316,36 +437,46 @@ public class frmVotacion extends javax.swing.JFrame {
         }
     }
     
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void actualizarResultados() {
+        capa_logica.VotacionServicio.ResultadosTotales totales;
+        String ambito = cboAmbito.getSelectedItem().toString();
+        String region = cboRegion.getSelectedItem() != null
+                ? cboRegion.getSelectedItem().toString() : "";
+        if (ambito.equals("TODOS")) {
+            totales = service.obtenerTotales();
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new frmVotacion().setVisible(true));
+        } else if (ambito.equals("PERÚ")) {
+            if (region.isEmpty() || region.equals("--")) {
+                // Todo Perú
+                totales = service.obtenerTotalesPorTipo("Departamento");
+            } else {
+                // Departamento específico (Amazonas, Áncash, etc.)
+                totales = service.obtenerTotalesPorUbicacion(region);
+            }
+        } else {
+            // EXTRANJERO
+            if (region.isEmpty() || region.equals("--")) {
+                totales = service.obtenerTotalesPorTipo("Extranjero");
+            } else {
+                // Continente específico
+                totales = service.obtenerTotalesPorUbicacion(region);
+            }
+        }
+        lblVotosKeiko.setText(String.valueOf(totales.getTotalKeiko()));
+        lblVotosSanchez.setText(String.valueOf(totales.getTotalSanchez()));
+        lblPorcentajeKeiko.setText(String.format("%.2f%%", totales.getPorcentajeKeiko()));
+        lblPorcentajeSanchez.setText(String.format("%.2f%%", totales.getPorcentajeSanchez()));
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPanelKeiko;
     private javax.swing.JPanel JPanelKeiko1;
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JComboBox<String> cboAmbito;
     private javax.swing.JComboBox<String> cboRegion;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAmbito;
     private javax.swing.JLabel lblApellidosKeiko1;
@@ -362,5 +493,7 @@ public class frmVotacion extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblVotosKeiko;
     private javax.swing.JLabel lblVotosSanchez;
+    private javax.swing.JTextField txtVotosKeiko;
+    private javax.swing.JTextField txtVotosSanchez;
     // End of variables declaration//GEN-END:variables
 }

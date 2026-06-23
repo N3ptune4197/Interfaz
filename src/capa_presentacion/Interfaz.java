@@ -15,6 +15,9 @@ public class Interfaz {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        frmVotacion objVotacion = new frmVotacion(null, true);
+        objVotacion.setLocationRelativeTo(objVotacion);
+        objVotacion.setVisible(true);
     }
     
 }
