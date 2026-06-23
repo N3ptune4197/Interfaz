@@ -20,7 +20,22 @@ public class VotoDAO {
     private Map<String, Voto> votosMap = new HashMap<>();
 
     public void guardarVoto(Voto voto) {
-        votosMap.put(voto.getClave(), voto);
+        String clave = voto.getClave();
+
+        if (votosMap.containsKey(clave)) {
+            Voto existente = votosMap.get(clave);
+
+            existente.setVotosKeiko(
+                existente.getVotosKeiko() + voto.getVotosKeiko()
+            );
+
+            existente.setVotosSanchez(
+                existente.getVotosSanchez() + voto.getVotosSanchez()
+            );
+
+        } else {
+            votosMap.put(clave, voto);
+        }
     }
 
     public List<Voto> obtenerTodos() {

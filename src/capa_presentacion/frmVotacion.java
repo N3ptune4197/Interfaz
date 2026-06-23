@@ -29,11 +29,12 @@ public class frmVotacion extends javax.swing.JFrame {
         service = new capa_logica.VotacionServicio();
         initData();
         actualizarSelectores();
+        actualizarResultados();
     }
 
     private void initData() {
 
-        data.put("PERU", Arrays.asList(
+        data.put("PERÚ", Arrays.asList(
             "AMAZONAS", "ÁNCASH", "APURÍMAC", "AREQUIPA", "AYACUCHO",
             "CAJAMARCA", "CALLAO", "CUSCO", "HUANCAVELICA", "HUÁNUCO",
             "ICA", "JUNÍN", "LA LIBERTAD", "LAMBAYEQUE", "LIMA",
@@ -269,35 +270,32 @@ public class frmVotacion extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(19, 19, 19)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblAmbito)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cboAmbito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cboRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(JPanelKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(55, 55, 55)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblAmbito)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cboAmbito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cboRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JPanelKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(49, 49, 49)
-                                .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(49, 49, 49)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(87, 87, 87)
+                                .addGap(17, 17, 17)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(18, 18, 18)
+                                .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(378, 378, 378)
+                        .addGap(384, 384, 384)
                         .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
@@ -315,15 +313,15 @@ public class frmVotacion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JPanelKeiko1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JPanelKeiko, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(42, 42, 42)
+                .addGap(197, 197, 197)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                    .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -348,22 +346,20 @@ public class frmVotacion extends javax.swing.JFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
-        // --- Leer valores de los combos ---
+        // Leer valores de los combos
         String ambito = cboAmbito.getSelectedItem().toString();   // "PERÚ" o "EXTRANJERO"
         String region = cboRegion.getSelectedItem().toString();
 
-        // --- Validar que no sea "--" ---
-        if (ambito.equals("TODOS") || region.equals("--") || region.isEmpty()) {
+        if (ambito.equals("TODOS") || cboRegion.getSelectedItem() == null) {
             javax.swing.JOptionPane.showMessageDialog(this,
-                    "Seleccione un ámbito y una región válidos.",
+                    "Seleccione un ámbito y una región válidos",
                     "Selección inválida", javax.swing.JOptionPane.WARNING_MESSAGE);
             return;
         }
         
-        // --- Determinar tipo según ámbito ---
+        // Determinar tipo según ámbito
         String tipo = ambito.equals("PERÚ") ? "Departamento" : "Extranjero";
    
-        // --- Validar campos de votos ---
         int votosKeiko, votosSanchez;
         try {
             votosKeiko = Integer.parseInt(txtVotosKeiko.getText().trim());
@@ -371,7 +367,7 @@ public class frmVotacion extends javax.swing.JFrame {
 
             if (votosKeiko < 0 || votosSanchez < 0) {
                 javax.swing.JOptionPane.showMessageDialog(this,
-                        "Los votos no pueden ser negativos.",
+                        "Los votos no pueden ser negativos",
                         "Valor inválido", javax.swing.JOptionPane.WARNING_MESSAGE);
                 return;
             }
@@ -415,7 +411,7 @@ public class frmVotacion extends javax.swing.JFrame {
 
             lblRegion.setText("REGIÓN");
 
-            for (String region : data.get("PERU")) {
+            for (String region : data.get("PERÚ")) {
                 cboRegion.addItem(region);
             }
 
@@ -446,19 +442,16 @@ public class frmVotacion extends javax.swing.JFrame {
             totales = service.obtenerTotales();
 
         } else if (ambito.equals("PERÚ")) {
-            if (region.isEmpty() || region.equals("--")) {
-                // Todo Perú
+            if (region.isEmpty() || region.equalsIgnoreCase("--")) {
                 totales = service.obtenerTotalesPorTipo("Departamento");
             } else {
-                // Departamento específico (Amazonas, Áncash, etc.)
                 totales = service.obtenerTotalesPorUbicacion(region);
             }
         } else {
             // EXTRANJERO
-            if (region.isEmpty() || region.equals("--")) {
+            if (region.isEmpty() || region.equalsIgnoreCase("--")) {
                 totales = service.obtenerTotalesPorTipo("Extranjero");
             } else {
-                // Continente específico
                 totales = service.obtenerTotalesPorUbicacion(region);
             }
         }

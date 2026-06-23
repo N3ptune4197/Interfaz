@@ -27,44 +27,38 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="lblAmbito" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cboAmbito" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="lblRegion" min="-2" pref="84" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="cboRegion" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="JPanelKeiko" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="lblAmbito" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cboAmbito" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="lblRegion" min="-2" pref="84" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="cboRegion" min="-2" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="JPanelKeiko" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" pref="148" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="txtVotosKeiko" min="-2" pref="179" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                              <Component id="JPanelKeiko1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                               <Component id="jLabel2" min="-2" pref="179" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="txtVotosSanchez" min="-2" pref="201" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="JPanelKeiko1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="378" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="384" max="-2" attributes="0"/>
                       <Component id="btnRegistrar" min="-2" pref="226" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -88,16 +82,16 @@
                   <Component id="JPanelKeiko1" max="32767" attributes="0"/>
                   <Component id="JPanelKeiko" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="197" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabel1" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                   <Component id="jLabel2" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                  <Component id="txtVotosKeiko" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                  <Component id="txtVotosKeiko" alignment="1" min="-2" pref="48" max="-2" attributes="0"/>
                   <Component id="txtVotosSanchez" alignment="3" min="-2" pref="53" max="-2" attributes="0"/>
+                  <Component id="jLabel1" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="54" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnRegistrar" min="-2" pref="56" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
