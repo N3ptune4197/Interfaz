@@ -4,11 +4,17 @@
  */
 package interfaz;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author NAYR VASQUEZ
  */
 public class frmVotacion extends javax.swing.JFrame {
+    private Map<String, Map<String, List<String>>> data = new HashMap<>();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(frmVotacion.class.getName());
 
@@ -17,8 +23,44 @@ public class frmVotacion extends javax.swing.JFrame {
      */
     public frmVotacion() {
         initComponents();
+        initData();
     }
 
+    private void initData() {
+
+        Map<String, List<String>> peru = new HashMap<>();
+
+        peru.put("AMAZONAS", Arrays.asList(
+            "Chachapoyas", "Bagua", "Bongará", "Condorcanqui", "Luya", "Utcubamba"
+        ));
+
+        peru.put("ÁNCASH", Arrays.asList(
+            "Huaraz", "Santa", "Casma", "Huari", "Huarmey"
+        ));
+
+        peru.put("LIMA", Arrays.asList(
+            "Lima", "Cañete", "Huarochirí", "Huaura"
+        ));
+
+        peru.put("LAMBAYEQUE", Arrays.asList(
+            "Chiclayo", "Ferreñafe", "Lambayeque"
+        ));
+
+        data.put("PERÚ", peru);
+
+
+        Map<String, List<String>> extranjero = new HashMap<>();
+
+        extranjero.put("AMÉRICA", Arrays.asList(
+            "EEUU", "Canadá", "México"
+        ));
+
+        extranjero.put("EUROPA", Arrays.asList(
+            "España", "Francia", "Italia"
+        ));
+
+        data.put("EXTRANJERO", extranjero);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -359,93 +401,63 @@ public class frmVotacion extends javax.swing.JFrame {
     }
     
     private void cargarNivel2() {
-        String ambito = (String) cbAmbito.getSelectedItem();
-        String nivel1 = (String) cbNivel1.getSelectedItem();
-        
-        cbNivel2.removeAllItems();
-        cbNivel3.removeAllItems();
-        cbNivel3.setEnabled(false);
-        
-        if (nivel1 == null || nivel1.isEmpty()) {
-            cbNivel2.setEnabled(false);
-            actualizarResultados();
-            return;
-        }
-        
-        cbNivel2.setEnabled(true);
-        
-        if ("PERÚ".equals(ambito)) {
-            // Cargar provincias según región
-            if ("Amazonas".equals(nivel1)) {
-                cbNivel2.addItem("Bagua");
-                cbNivel2.addItem("Utcubamba");
-                cbNivel2.addItem("Chachapoyas");
-            } else if ("Áncash".equals(nivel1)) {
-                cbNivel2.addItem("Huaraz");
-                cbNivel2.addItem("Santa");
-                cbNivel2.addItem("Casma");
-            } else if ("Lima".equals(nivel1)) {
-                cbNivel2.addItem("Lima");
-                cbNivel2.addItem("Cañete");
-                cbNivel2.addItem("Huarochirí");
-            }
-        } else if ("EXTRANJERO".equals(ambito)) {
-            // Cargar países según continente
-            if ("América".equals(nivel1)) {
-                cbNivel2.addItem("EEUU");
-                cbNivel2.addItem("Canadá");
-                cbNivel2.addItem("México");
-            } else if ("Europa".equals(nivel1)) {
-                cbNivel2.addItem("España");
-                cbNivel2.addItem("Francia");
-                cbNivel2.addItem("Italia");
+
+        String ambito = (String) cboAmbito.getSelectedItem();
+        String region = (String) cboRegion.getSelectedItem();
+
+        cboProvincia.removeAllItems();
+        cboDistrito.removeAllItems();
+
+        if (ambito == null || region == null) return;
+
+        Map<String, List<String>> nivel1 = data.get(ambito);
+
+        if (nivel1 != null) {
+            List<String> lista = nivel1.get(region);
+
+            if (lista != null) {
+                for (String item : lista) {
+                    cboProvincia.addItem(item);
+                }
             }
         }
-        
-        actualizarResultados();
+
+        cboProvincia.setEnabled(true);
+        cboDistrito.setEnabled(false);
     }
     
     private void cargarNivel3() {
-        String ambito = (String) cbAmbito.getSelectedItem();
-        String nivel1 = (String) cbNivel1.getSelectedItem();
-        String nivel2 = (String) cbNivel2.getSelectedItem();
-        
-        cbNivel3.removeAllItems();
-        
-        if (nivel2 == null || nivel2.isEmpty()) {
-            cbNivel3.setEnabled(false);
-            actualizarResultados();
-            return;
+
+        String provincia = (String) cboProvincia.getSelectedItem();
+
+        cboDistrito.removeAllItems();
+
+        if (provincia == null) return;
+
+        cboDistrito.setEnabled(true);
+
+        if ("Bagua".equals(provincia)) {
+            cboDistrito.addItem("Bagua");
+            cboDistrito.addItem("Aramango");
+            cboDistrito.addItem("Copallín");
+            cboDistrito.addItem("El Parco");
+
+        } else if ("Utcubamba".equals(provincia)) {
+            cboDistrito.addItem("Bagua Grande");
+            cboDistrito.addItem("Cajaruro");
+            cboDistrito.addItem("Cumba");
+
+        } else if ("Huaraz".equals(provincia)) {
+            cboDistrito.addItem("Huaraz");
+            cboDistrito.addItem("Independencia");
+            cboDistrito.addItem("Olleros");
+
+        } else if ("Lima".equals(provincia)) {
+            cboDistrito.addItem("Lima");
+            cboDistrito.addItem("Ate");
+            cboDistrito.addItem("Comas");
+            cboDistrito.addItem("San Juan de Lurigancho");
         }
-        
-        cbNivel3.setEnabled(true);
-        
-        if ("PERÚ".equals(ambito)) {
-            // Cargar distritos según provincia
-            if ("Bagua".equals(nivel2)) {
-                cbNivel3.addItem("Bagua");
-                cbNivel3.addItem("El Parco");
-                cbNivel3.addItem("Copallín");
-            } else if ("Utcubamba".equals(nivel2)) {
-                cbNivel3.addItem("Bagua Grande");
-                cbNivel3.addItem("Cajaruro");
-            } else if ("Huaraz".equals(nivel2)) {
-                cbNivel3.addItem("Huaraz");
-                cbNivel3.addItem("Independencia");
-            }
-        } else if ("EXTRANJERO".equals(ambito)) {
-            // Cargar ciudades según país
-            if ("EEUU".equals(nivel2)) {
-                cbNivel3.addItem("Nueva York");
-                cbNivel3.addItem("Miami");
-                cbNivel3.addItem("Los Ángeles");
-            } else if ("España".equals(nivel2)) {
-                cbNivel3.addItem("Madrid");
-                cbNivel3.addItem("Barcelona");
-            }
-        }
-        
-        actualizarResultados();
     }
 
     private void actualizarEtiquetas() {
