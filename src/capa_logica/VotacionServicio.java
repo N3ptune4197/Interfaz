@@ -50,7 +50,6 @@ public class VotacionServicio {
         return new ResultadosTotales(totalKeiko, totalSanchez);
     }
 
-    // Agregar en VotacionServicio.java
     public ResultadosTotales obtenerTotalesPorUbicacion(String ubicacion) {
         List<Voto> lista = repositorio.obtenerTodos();
         int totalKeiko = 0, totalSanchez = 0;
@@ -99,5 +98,13 @@ public class VotacionServicio {
             int total = getTotalVotos();
             return total == 0 ? 0 : (totalSanchez * 100.0) / total;
         }
+    }
+    
+    public void limpiarPorTipo(String tipo) {
+        repositorio.limpiarPorTipo(tipo);
+    }
+
+    public void limpiarPorUbicacion(String ubicacion) {
+        repositorio.limpiarPorUbicacion(ubicacion);
     }
 }

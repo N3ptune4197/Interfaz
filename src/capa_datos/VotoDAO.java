@@ -14,8 +14,6 @@ import java.util.Map;
  * @author User
  */
 
-
-
 public class VotoDAO {
     private Map<String, Voto> votosMap = new HashMap<>();
 
@@ -63,5 +61,13 @@ public class VotoDAO {
 
     public void limpiar() {
         votosMap.clear();
+    }
+    
+    public void limpiarPorTipo(String tipo) {
+        votosMap.values().removeIf(v -> v.getTipo().equals(tipo));
+    }
+
+    public void limpiarPorUbicacion(String ubicacion) {
+        votosMap.values().removeIf(v -> v.getUbicacion().equalsIgnoreCase(ubicacion));
     }
 }

@@ -9,8 +9,8 @@ package capa_datos;
  * @author User
  */
 public class Voto {
-    private String tipo;        // "Departamento" o "Extranjero"
-    private String ubicacion;   // nombre del departamento o país
+    private String tipo;        // Región o Extranjero
+    private String ubicacion;   // Nombre del departamento o país
     private int votosKeiko;
     private int votosSanchez;
 
@@ -21,7 +21,6 @@ public class Voto {
         this.votosSanchez = votosSanchez;
     }
 
-    // Getters y setters
     public String getTipo() { return tipo; }
     public void setTipo(String tipo) { this.tipo = tipo; }
     public String getUbicacion() { return ubicacion; }

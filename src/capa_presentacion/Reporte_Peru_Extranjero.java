@@ -111,7 +111,7 @@ public class Reporte_Peru_Extranjero extends javax.swing.JDialog {
         VotacionServicio.ResultadosTotales peru,
         VotacionServicio.ResultadosTotales extranjero) {
 
-    txtReporte_extr.setText(
+        txtReporte_extr.setText(
 
         "=========== PERÚ ==========\n\n" +
 

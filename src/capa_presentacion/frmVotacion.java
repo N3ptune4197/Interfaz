@@ -10,6 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -86,6 +87,8 @@ public class frmVotacion extends javax.swing.JFrame {
         btnRegistrar = new javax.swing.JButton();
         btnReporte_G1 = new javax.swing.JButton();
         btnReporte_G2 = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
+        btnCerrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
@@ -268,18 +271,54 @@ public class frmVotacion extends javax.swing.JFrame {
         btnRegistrar.addActionListener(this::btnRegistrarActionPerformed);
 
         btnReporte_G1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnReporte_G1.setForeground(new java.awt.Color(0, 51, 102));
         btnReporte_G1.setText("Reporte General");
         btnReporte_G1.addActionListener(this::btnReporte_G1ActionPerformed);
 
         btnReporte_G2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnReporte_G2.setForeground(new java.awt.Color(0, 51, 102));
         btnReporte_G2.setText("Reporte por Pais y Extrajero");
         btnReporte_G2.addActionListener(this::btnReporte_G2ActionPerformed);
+
+        btnLimpiar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnLimpiar.setForeground(new java.awt.Color(0, 51, 102));
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
+
+        btnCerrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(0, 51, 102));
+        btnCerrar.setText("Cerrar");
+        btnCerrar.addActionListener(this::btnCerrarActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(129, 129, 129)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnReporte_G1)
+                        .addGap(106, 106, 106)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(74, 74, 74)
+                        .addComponent(btnReporte_G2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)))
+                .addGap(45, 45, 45))
             .addGroup(layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,26 +334,6 @@ public class frmVotacion extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(17, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(129, 129, 129)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnReporte_G1)
-                        .addGap(96, 96, 96)
-                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(84, 84, 84)
-                        .addComponent(btnReporte_G2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)))
-                .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,18 +349,28 @@ public class frmVotacion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JPanelKeiko1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JPanelKeiko, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(64, 64, 64)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReporte_G1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReporte_G2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
+                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnReporte_G1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnReporte_G2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(57, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(21, 41, Short.MAX_VALUE))))
         );
 
         pack();
@@ -367,7 +396,7 @@ public class frmVotacion extends javax.swing.JFrame {
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         // TODO add your handling code here:
         // Leer valores de los combos
-        String ambito = cboAmbito.getSelectedItem().toString();   // "PERÚ" o "EXTRANJERO"
+        String ambito = cboAmbito.getSelectedItem().toString();
         String region = cboRegion.getSelectedItem().toString();
 
         if (ambito.equals("TODOS") || cboRegion.getSelectedItem() == null) {
@@ -448,6 +477,45 @@ public class frmVotacion extends javax.swing.JFrame {
         dlg.setVisible(true);
     }//GEN-LAST:event_btnReporte_G2ActionPerformed
 
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        String ambito = cboAmbito.getSelectedItem().toString();
+        String region = cboRegion.getSelectedItem() != null
+                ? cboRegion.getSelectedItem().toString() : "";
+
+        int confirm = JOptionPane.showConfirmDialog(
+                this,
+                "¿Seguro que deseas limpiar los datos mostrados?",
+                "Confirmar",
+                JOptionPane.YES_NO_OPTION
+        );
+
+        if (confirm != JOptionPane.YES_OPTION) return;
+
+        if (ambito.equals("TODOS")) {
+            service.limpiarDatos();
+        } else if (ambito.equals("PERÚ")) {
+            if (region.isEmpty() || region.equalsIgnoreCase("--")) {
+                service.limpiarPorTipo("REGIÓN");
+            } else {
+                service.limpiarPorUbicacion(region);
+            }
+        } else {
+            if (region.isEmpty() || region.equalsIgnoreCase("--")) {
+                service.limpiarPorTipo("CONTINENTE");
+            } else {
+                service.limpiarPorUbicacion(region);
+            }
+        }
+
+        actualizarResultados();
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
+    private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnCerrarActionPerformed
+
     private void actualizarSelectores() {
         cboRegion.removeAllItems();
         String ambito = cboAmbito.getSelectedItem().toString();
@@ -488,14 +556,13 @@ public class frmVotacion extends javax.swing.JFrame {
 
         } else if (ambito.equals("PERÚ")) {
             if (region.isEmpty() || region.equalsIgnoreCase("--")) {
-                totales = service.obtenerTotalesPorTipo("Departamento");
+                totales = service.obtenerTotalesPorTipo("REGIÓN");
             } else {
                 totales = service.obtenerTotalesPorUbicacion(region);
             }
         } else {
-            // EXTRANJERO
             if (region.isEmpty() || region.equalsIgnoreCase("--")) {
-                totales = service.obtenerTotalesPorTipo("Extranjero");
+                totales = service.obtenerTotalesPorTipo("EXTRANJERO");
             } else {
                 totales = service.obtenerTotalesPorUbicacion(region);
             }
@@ -535,41 +602,13 @@ public class frmVotacion extends javax.swing.JFrame {
                     + "\n";
         }
     }
-    
-//    private void mostrarReporteTotales() {
-//
-//        var peru =
-//            service.obtenerTotalesPorTipo("Departamento");
-//
-//        var extranjero =
-//            service.obtenerTotalesPorTipo("Extranjero");
-//
-//        String texto = "";
-//
-//        texto += "REPORTE DE TOTALES\n\n";
-//
-//        texto += "PERÚ\n";
-//        texto += "Keiko: "
-//                + peru.getTotalKeiko() + "\n";
-//
-//        texto += "Sánchez: "
-//                + peru.getTotalSanchez() + "\n\n";
-//
-//        texto += "EXTRANJERO\n";
-//
-//        texto += "Keiko: "
-//                + extranjero.getTotalKeiko() + "\n";
-//
-//        texto += "Sánchez: "
-//                + extranjero.getTotalSanchez() + "\n";
-//
-//        txtListado.setText(texto);
-//}
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPanelKeiko;
     private javax.swing.JPanel JPanelKeiko1;
+    private javax.swing.JButton btnCerrar;
+    private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JButton btnReporte_G1;
     private javax.swing.JButton btnReporte_G2;
