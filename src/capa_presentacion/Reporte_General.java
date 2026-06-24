@@ -22,6 +22,7 @@ public class Reporte_General extends javax.swing.JDialog {
     public Reporte_General(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        tblReporteGeneral.setDefaultEditor(Object.class, null);
     }
 
     /**

@@ -20,6 +20,8 @@ public class Reporte_Peru_Extranjero extends javax.swing.JDialog {
     public Reporte_Peru_Extranjero(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        txtReporte_extr.setEditable(false);
+        txtReporte_extr.setFocusable(false);
     }
 
     /**
