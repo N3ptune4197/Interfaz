@@ -5,6 +5,7 @@
 package capa_presentacion;
 
 import capa_datos.Voto;
+import capa_logica.VotacionServicio.ResultadosTotales;
 import java.util.Arrays;
 import java.util.List;
 import java.util.HashMap;
@@ -83,10 +84,11 @@ public class frmVotacion extends javax.swing.JFrame {
         txtVotosKeiko = new javax.swing.JTextField();
         txtVotosSanchez = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtListado = new javax.swing.JTextArea();
+        btnReporte_G1 = new javax.swing.JButton();
+        btnReporte_G2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(0, 0));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
@@ -265,11 +267,13 @@ public class frmVotacion extends javax.swing.JFrame {
         btnRegistrar.setText("Registrar Votos");
         btnRegistrar.addActionListener(this::btnRegistrarActionPerformed);
 
-        jScrollPane1.setForeground(new java.awt.Color(153, 153, 255));
+        btnReporte_G1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnReporte_G1.setText("Reporte General");
+        btnReporte_G1.addActionListener(this::btnReporte_G1ActionPerformed);
 
-        txtListado.setColumns(20);
-        txtListado.setRows(5);
-        jScrollPane1.setViewportView(txtListado);
+        btnReporte_G2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnReporte_G2.setText("Reporte por Pais y Extrajero");
+        btnReporte_G2.addActionListener(this::btnReporte_G2ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -277,39 +281,40 @@ public class frmVotacion extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(68, 68, 68)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(111, 111, 111)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(300, 300, 300)
-                                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 945, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblAmbito)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cboAmbito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(lblRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cboRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(JPanelKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(49, 49, 49)
-                                .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(74, Short.MAX_VALUE))
+                        .addComponent(lblAmbito)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboAmbito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cboRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(JPanelKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(49, 49, 49)
+                .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(17, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(129, 129, 129)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnReporte_G1)
+                        .addGap(96, 96, 96)
+                        .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(btnReporte_G2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)))
+                .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,17 +330,18 @@ public class frmVotacion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JPanelKeiko1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JPanelKeiko, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(44, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(64, 64, 64)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReporte_G1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnReporte_G2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -395,6 +401,7 @@ public class frmVotacion extends javax.swing.JFrame {
         // --- Registrar y actualizar ---
         service.registrarVotos(tipo, region, votosKeiko, votosSanchez);
         actualizarResultados();
+        actualizarListado();
         txtVotosKeiko.setText("");
         txtVotosSanchez.setText("");
 
@@ -416,6 +423,30 @@ public class frmVotacion extends javax.swing.JFrame {
             actualizarResultados();
         }
     }//GEN-LAST:event_cboRegionItemStateChanged
+
+    private void btnReporte_G1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporte_G1ActionPerformed
+        // TODO add your handling code here:
+        Reporte_General dlg = new Reporte_General(this, true);
+        dlg.cargarDatos(service.obtenerTodos());
+
+        dlg.setLocationRelativeTo(this);
+        dlg.setVisible(true);
+
+    }//GEN-LAST:event_btnReporte_G1ActionPerformed
+
+    private void btnReporte_G2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReporte_G2ActionPerformed
+        // TODO add your handling code here:
+        Reporte_Peru_Extranjero dlg = new Reporte_Peru_Extranjero(this, true);
+
+        ResultadosTotales peru = service.obtenerTotalesPorTipo("Departamento");
+
+        ResultadosTotales extranjero = service.obtenerTotalesPorTipo("Extranjero");
+
+        dlg.cargarTotales(peru, extranjero);
+
+        dlg.setLocationRelativeTo(this);
+        dlg.setVisible(true);
+    }//GEN-LAST:event_btnReporte_G2ActionPerformed
 
     private void actualizarSelectores() {
         cboRegion.removeAllItems();
@@ -469,8 +500,8 @@ public class frmVotacion extends javax.swing.JFrame {
                 totales = service.obtenerTotalesPorUbicacion(region);
             }
         }
-        lblVotosKeiko.setText(String.valueOf(totales.getTotalKeiko()));
-        lblVotosSanchez.setText(String.valueOf(totales.getTotalSanchez()));
+        lblVotosKeiko.setText(String.valueOf(totales.getTotalKeiko()+" votos"));
+        lblVotosSanchez.setText(String.valueOf(totales.getTotalSanchez()+" votos"));
         lblPorcentajeKeiko.setText(String.format("%.2f%%", totales.getPorcentajeKeiko()));
         lblPorcentajeSanchez.setText(String.format("%.2f%%", totales.getPorcentajeSanchez()));
     }
@@ -480,34 +511,73 @@ public class frmVotacion extends javax.swing.JFrame {
 
         String texto = "";
 
+        texto += "TIPO\tUBICACION\tKEIKO\tSANCHEZ\t%K\t%S\n";
+        texto += "-----------------------------------------------------------\n";
+
         for (Voto v : lista) {
+
             int total = v.getVotosKeiko() + v.getVotosSanchez();
 
-            double porcKeiko = total == 0 ? 0 : (v.getVotosKeiko() * 100.0) / total;
-            double porcSanchez = total == 0 ? 0 : (v.getVotosSanchez() * 100.0) / total;
+            double porcKeiko =
+                total == 0 ? 0 :
+                (v.getVotosKeiko() * 100.0) / total;
 
-            texto += v.getUbicacion()
-                    + " | K: " + v.getVotosKeiko()
-                    + " | S: " + v.getVotosSanchez()
-                    + " | " + String.format("%.2f%%", porcKeiko)
-                    + " | " + String.format("%.2f%%", porcSanchez)
+            double porcSanchez =
+                total == 0 ? 0 :
+                (v.getVotosSanchez() * 100.0) / total;
+
+            texto += v.getTipo() + "\t"
+                    + v.getUbicacion() + "\t"
+                    + v.getVotosKeiko() + "\t"
+                    + v.getVotosSanchez() + "\t"
+                    + String.format("%.2f%%", porcKeiko) + "\t"
+                    + String.format("%.2f%%", porcSanchez)
                     + "\n";
         }
-
-        txtListado.setText(texto);
     }
+    
+//    private void mostrarReporteTotales() {
+//
+//        var peru =
+//            service.obtenerTotalesPorTipo("Departamento");
+//
+//        var extranjero =
+//            service.obtenerTotalesPorTipo("Extranjero");
+//
+//        String texto = "";
+//
+//        texto += "REPORTE DE TOTALES\n\n";
+//
+//        texto += "PERÚ\n";
+//        texto += "Keiko: "
+//                + peru.getTotalKeiko() + "\n";
+//
+//        texto += "Sánchez: "
+//                + peru.getTotalSanchez() + "\n\n";
+//
+//        texto += "EXTRANJERO\n";
+//
+//        texto += "Keiko: "
+//                + extranjero.getTotalKeiko() + "\n";
+//
+//        texto += "Sánchez: "
+//                + extranjero.getTotalSanchez() + "\n";
+//
+//        txtListado.setText(texto);
+//}
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPanelKeiko;
     private javax.swing.JPanel JPanelKeiko1;
     private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnReporte_G1;
+    private javax.swing.JButton btnReporte_G2;
     private javax.swing.JComboBox<String> cboAmbito;
     private javax.swing.JComboBox<String> cboRegion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblAmbito;
     private javax.swing.JLabel lblApellidosKeiko1;
     private javax.swing.JLabel lblApellidosSanchez;
@@ -523,7 +593,6 @@ public class frmVotacion extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblVotosKeiko;
     private javax.swing.JLabel lblVotosSanchez;
-    private javax.swing.JTextArea txtListado;
     private javax.swing.JTextField txtVotosKeiko;
     private javax.swing.JTextField txtVotosSanchez;
     // End of variables declaration//GEN-END:variables
