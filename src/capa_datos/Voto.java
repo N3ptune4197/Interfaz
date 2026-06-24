@@ -9,7 +9,7 @@ package capa_datos;
  * @author User
  */
 public class Voto {
-    private String tipo;        // Región o Extranjero
+    private String tipo;        // Región o Continente
     private String ubicacion;   // Nombre del departamento o país
     private int votosKeiko;
     private int votosSanchez;

@@ -407,7 +407,7 @@ public class frmVotacion extends javax.swing.JFrame {
         }
         
         // Determinar tipo según ámbito
-        String tipo = ambito.equals("PERÚ") ? "Departamento" : "Extranjero";
+        String tipo = ambito.equals("PERÚ") ? "REGIÓN" : "CONTINENTE";
    
         int votosKeiko, votosSanchez;
         try {
@@ -467,9 +467,9 @@ public class frmVotacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         Reporte_Peru_Extranjero dlg = new Reporte_Peru_Extranjero(this, true);
 
-        ResultadosTotales peru = service.obtenerTotalesPorTipo("Departamento");
+        ResultadosTotales peru = service.obtenerTotalesPorTipo("REGIÓN");
 
-        ResultadosTotales extranjero = service.obtenerTotalesPorTipo("Extranjero");
+        ResultadosTotales extranjero = service.obtenerTotalesPorTipo("CONTINENTE");
 
         dlg.cargarTotales(peru, extranjero);
 
@@ -528,8 +528,7 @@ public class frmVotacion extends javax.swing.JFrame {
                 cboRegion.addItem(region);
             }
 
-        } 
-        else if (ambito.equals("EXTRANJERO")) {
+        } else if (ambito.equals("EXTRANJERO")) {
 
             lblRegion.setText("CONTINENTE");
 
@@ -562,11 +561,12 @@ public class frmVotacion extends javax.swing.JFrame {
             }
         } else {
             if (region.isEmpty() || region.equalsIgnoreCase("--")) {
-                totales = service.obtenerTotalesPorTipo("EXTRANJERO");
+                totales = service.obtenerTotalesPorTipo("CONTINENTE");
             } else {
                 totales = service.obtenerTotalesPorUbicacion(region);
             }
         }
+        
         lblVotosKeiko.setText(String.valueOf(totales.getTotalKeiko()+" votos"));
         lblVotosSanchez.setText(String.valueOf(totales.getTotalSanchez()+" votos"));
         lblPorcentajeKeiko.setText(String.format("%.2f%%", totales.getPorcentajeKeiko()));
