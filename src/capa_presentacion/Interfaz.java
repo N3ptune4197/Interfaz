@@ -5,8 +5,11 @@
 package capa_presentacion;
 
 /**
- *
- * @author User
+ * Integrantes del proyecto:
+ * Chero Mendoza Carlos Fabian
+ * Estrada Ibaran Diego Alonso
+ * Estela Vasquez Fabrizzio Jared
+ * Heredia Vidarte Jimmy Alexander
  */
 public class Interfaz {
 
