@@ -5,7 +5,6 @@
 package capa_logica;
 
 
-import capa_datos.Voto;
 import capa_datos.VotoDAO;
 import java.util.List;
 

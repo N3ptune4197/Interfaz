@@ -2,15 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package capa_datos;
+package capa_logica;
 
 /**
  *
  * @author User
  */
 public class Voto {
-    private String tipo;        // Región o Continente
-    private String ubicacion;   // Nombre del departamento o país
+    private String tipo;        //          Región          | Continente
+    private String ubicacion;   // Nombre del departamento  | No almacena el pais, este atributo queda vaico
     private int votosKeiko;
     private int votosSanchez;
 

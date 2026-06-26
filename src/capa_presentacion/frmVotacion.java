@@ -4,7 +4,7 @@
  */
 package capa_presentacion;
 
-import capa_datos.Voto;
+import capa_logica.Voto;
 import capa_logica.VotacionServicio.ResultadosTotales;
 import java.util.Arrays;
 import java.util.List;

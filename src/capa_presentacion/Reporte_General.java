@@ -4,7 +4,7 @@
  */
 package capa_presentacion;
 
-import capa_datos.Voto;
+import capa_logica.Voto;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 

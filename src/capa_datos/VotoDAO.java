@@ -4,6 +4,7 @@
  */
 package capa_datos;
 
+import capa_logica.Voto;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
