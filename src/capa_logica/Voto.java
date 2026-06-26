@@ -9,8 +9,8 @@ package capa_logica;
  * @author User
  */
 public class Voto {
-    private String tipo;        //          Región          | Continente
-    private String ubicacion;   // Nombre del departamento  | No almacena el pais, este atributo queda vaico
+    private String tipo;        // Región | Continente
+    private String ubicacion;
     private int votosKeiko;
     private int votosSanchez;
 

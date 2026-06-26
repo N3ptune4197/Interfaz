@@ -451,7 +451,6 @@ public class frmVotacion extends javax.swing.JFrame {
         // --- Registrar y actualizar ---
         service.registrarVotos(tipo, region, votosKeiko, votosSanchez);
         actualizarResultados();
-        actualizarListado();
         txtVotosKeiko.setText("");
         txtVotosSanchez.setText("");
 
@@ -593,37 +592,6 @@ public class frmVotacion extends javax.swing.JFrame {
         lblPorcentajeKeiko.setText(String.format("%.2f%%", totales.getPorcentajeKeiko()));
         lblPorcentajeSanchez.setText(String.format("%.2f%%", totales.getPorcentajeSanchez()));
     }
-    
-    private void actualizarListado() {
-        List<Voto> lista = service.obtenerTodos();
-
-        String texto = "";
-
-        texto += "TIPO\tUBICACION\tKEIKO\tSANCHEZ\t%K\t%S\n";
-        texto += "-----------------------------------------------------------\n";
-
-        for (Voto v : lista) {
-
-            int total = v.getVotosKeiko() + v.getVotosSanchez();
-
-            double porcKeiko =
-                total == 0 ? 0 :
-                (v.getVotosKeiko() * 100.0) / total;
-
-            double porcSanchez =
-                total == 0 ? 0 :
-                (v.getVotosSanchez() * 100.0) / total;
-
-            texto += v.getTipo() + "\t"
-                    + v.getUbicacion() + "\t"
-                    + v.getVotosKeiko() + "\t"
-                    + v.getVotosSanchez() + "\t"
-                    + String.format("%.2f%%", porcKeiko) + "\t"
-                    + String.format("%.2f%%", porcSanchez)
-                    + "\n";
-        }
-    }
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPanelKeiko;
