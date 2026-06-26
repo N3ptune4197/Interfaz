@@ -29,14 +29,17 @@ public class frmVotacion extends javax.swing.JFrame {
      */
     public frmVotacion(java.awt.Frame parent, boolean modal) {
         initComponents();
+        //Se asigna como "service" a la clase "VotacionServicio" de la capa_logica
         service = new capa_logica.VotacionServicio();
         initData();
         actualizarSelectores();
         actualizarResultados();
+        
     }
 
     private void initData() {
-
+        
+        //Se inicia el Array para los departamentos que hay en el peru
         data.put("PERÚ", Arrays.asList(
             "AMAZONAS", "ÁNCASH", "APURÍMAC", "AREQUIPA", "AYACUCHO",
             "CAJAMARCA", "CALLAO", "CUSCO", "HUANCAVELICA", "HUÁNUCO",
@@ -45,7 +48,7 @@ public class frmVotacion extends javax.swing.JFrame {
             "PUNO", "SAN MARTÍN", "TACNA", "TUMBES", "UCAYALI"
         ));
 
-
+        //Se inicia el Array por continentes que hay en el extranjero
         data.put("EXTRANJERO", Arrays.asList(
             "ÁFRICA", "AMÉRICA", "ASIA", "EUROPA", "OCEANIA"
         ));
@@ -81,14 +84,14 @@ public class frmVotacion extends javax.swing.JFrame {
         lblAmbito = new javax.swing.JLabel();
         lblRegion = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         txtVotosKeiko = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
         txtVotosSanchez = new javax.swing.JTextField();
         btnRegistrar = new javax.swing.JButton();
         btnReporte_G1 = new javax.swing.JButton();
-        btnReporte_G2 = new javax.swing.JButton();
         btnLimpiar = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
+        btnReporte_G2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(0, 0));
@@ -97,7 +100,7 @@ public class frmVotacion extends javax.swing.JFrame {
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(0, 51, 102));
-        lblTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/Captura de pantalla 2026-06-22 171242.png"))); // NOI18N
+        lblTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/ESCUDO.png"))); // NOI18N
         lblTitulo.setText("Elección de Fórmula Presidencial");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -238,7 +241,7 @@ public class frmVotacion extends javax.swing.JFrame {
                         .addComponent(lblFotoSanchez)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblVotosSanchez)
-                .addContainerGap(7, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         cboAmbito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "PERÚ", "EXTRANJERO" }));
@@ -257,85 +260,91 @@ public class frmVotacion extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 51, 102));
         jLabel1.setText("Votos Keiko");
 
+        txtVotosKeiko.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        txtVotosKeiko.addActionListener(this::txtVotosKeikoActionPerformed);
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 51, 102));
         jLabel2.setText("Votos Sánchez");
-
-        txtVotosKeiko.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        txtVotosKeiko.addActionListener(this::txtVotosKeikoActionPerformed);
 
         txtVotosSanchez.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         txtVotosSanchez.addActionListener(this::txtVotosSanchezActionPerformed);
 
         btnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnRegistrar.setForeground(new java.awt.Color(0, 51, 102));
-        btnRegistrar.setText("Registrar Votos");
+        btnRegistrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/anfora.png"))); // NOI18N
+        btnRegistrar.setText("Registrar Votos ");
         btnRegistrar.addActionListener(this::btnRegistrarActionPerformed);
 
         btnReporte_G1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         btnReporte_G1.setForeground(new java.awt.Color(0, 51, 102));
+        btnReporte_G1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/reporte_G.png"))); // NOI18N
         btnReporte_G1.setText("Reporte General");
         btnReporte_G1.addActionListener(this::btnReporte_G1ActionPerformed);
 
-        btnReporte_G2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnReporte_G2.setForeground(new java.awt.Color(0, 51, 102));
-        btnReporte_G2.setText("Reporte por Pais y Extrajero");
-        btnReporte_G2.addActionListener(this::btnReporte_G2ActionPerformed);
-
         btnLimpiar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnLimpiar.setForeground(new java.awt.Color(0, 51, 102));
+        btnLimpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/12177853.png"))); // NOI18N
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
 
         btnCerrar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCerrar.setForeground(new java.awt.Color(0, 51, 102));
+        btnCerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/bt_cerrar.png"))); // NOI18N
         btnCerrar.setText("Cerrar");
         btnCerrar.addActionListener(this::btnCerrarActionPerformed);
+
+        btnReporte_G2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnReporte_G2.setForeground(new java.awt.Color(0, 51, 102));
+        btnReporte_G2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos/reporte_ext.png"))); // NOI18N
+        btnReporte_G2.setText("Reporte por Pais y Extranjero");
+        btnReporte_G2.addActionListener(this::btnReporte_G2ActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(128, 128, 128)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnReporte_G1)
-                        .addGap(106, 106, 106)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(74, 74, 74)
-                        .addComponent(btnReporte_G2, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(90, 90, 90))))
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(357, 357, 357)
+                .addComponent(btnRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(392, 392, 392))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblAmbito)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cboAmbito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(65, 65, 65)
+                        .addComponent(btnReporte_G1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(78, 78, 78)
+                        .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(70, 70, 70)
+                        .addComponent(btnCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(35, 35, 35)
+                        .addComponent(btnReporte_G2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblAmbito)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cboAmbito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cboRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(JPanelKeiko, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(49, 49, 49)
+                        .addComponent(JPanelKeiko1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(79, 79, 79)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(lblRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cboRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(JPanelKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
-                .addComponent(JPanelKeiko1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(17, Short.MAX_VALUE))
+                        .addComponent(txtVotosKeiko)
+                        .addGap(174, 174, 174)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtVotosSanchez)
+                        .addGap(79, 79, 79)))
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -348,30 +357,34 @@ public class frmVotacion extends javax.swing.JFrame {
                     .addComponent(lblAmbito)
                     .addComponent(lblRegion))
                 .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JPanelKeiko1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(JPanelKeiko, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(35, 35, 35)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 51, Short.MAX_VALUE)
-                        .addComponent(txtVotosKeiko, javax.swing.GroupLayout.Alignment.TRAILING))
-                    .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtVotosKeiko, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtVotosSanchez, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnReporte_G2, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(btnReporte_G1))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnReporte_G1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnReporte_G2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(42, Short.MAX_VALUE))
+                            .addComponent(btnLimpiar, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                            .addComponent(btnCerrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(23, 23, 23)))
+                .addContainerGap())
         );
 
         pack();
@@ -404,6 +417,9 @@ public class frmVotacion extends javax.swing.JFrame {
             javax.swing.JOptionPane.showMessageDialog(this,
                     "Seleccione un ámbito y una región válidos",
                     "Selección inválida", javax.swing.JOptionPane.WARNING_MESSAGE);
+                    txtVotosKeiko.setText("");
+                    txtVotosSanchez.setText("");
+            
             return;
         }
         
@@ -419,6 +435,8 @@ public class frmVotacion extends javax.swing.JFrame {
                 javax.swing.JOptionPane.showMessageDialog(this,
                         "Los votos no pueden ser negativos",
                         "Valor inválido", javax.swing.JOptionPane.WARNING_MESSAGE);
+                        txtVotosKeiko.setText("");
+                        txtVotosSanchez.setText("");
                 return;
             }
         } catch (NumberFormatException e) {

@@ -18,9 +18,11 @@ public class Interfaz {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        // Se llama a la interfaz principal para que se muestre
         frmVotacion objVotacion = new frmVotacion(null, true);
         objVotacion.setLocationRelativeTo(objVotacion);
         objVotacion.setVisible(true);
+        
     }
     
 }
